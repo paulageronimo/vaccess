@@ -1,0 +1,82 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<style>
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-inverse" style="background-color: #deedff; border: 0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home/" style= "7u; color: #003d87">VACCESS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/" class = "color_me" id="spaceGroFont" style="color: #003d87;">Home</a></li>
+      <li><a href= "/statistics/" id="spaceGroFont" style="color: #003d87">Statistics</a></li>
+     <li><a href="/asmts/" style="color: #003d87">Assess</a></li>
+    <li><a href="/about/" style="color: #003d87">About Us</a></li>
+    
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/dash/" style="color: #003d87"><span class="glyphicon glyphicon-user" style="color: #003d87"></span>Account Dashboard</a></li>
+      <li><a href="/login/" style="color: #003d87"><span class="glyphicon glyphicon-log-in" style="color: #003d87"></span> Sign Up/Login</a></li>
+    </ul>
+  </div>
+</nav>
+    <div class="container">
+      <a href="/signup/" class="btn btn-lg btn-primary btn-block" role="button">Don't have an account? Sign up!</a>
+      <form class="form-signin" method="POST" action="/login">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.username) }}
+        {{ wtf.form_field(form.password) }}
+        {{ wtf.form_field(form.remember) }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+{% endblock %}

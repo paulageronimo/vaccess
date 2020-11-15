@@ -1,0 +1,122 @@
+{% extends "bootstrap/base.html" %}
+
+<!-- Info / CSS / Details -->
+{% block title %}Home{% endblock %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/static/fonts.css">
+
+
+{% block styles %} 
+{{super()}}
+<style>
+	.nav navbar-inverse.container-fluid.navbar-header.navbar-nav li a {
+    color: blue;
+}
+body {
+  background-image: url(../assets/subnavp.png) !important;
+  background-color: #deedff;
+  
+}
+
+#spaceGroFont{
+  font-family: 'Space Grotesk', sans-serif !important;
+} 
+</style>
+
+{%endblock%}
+</head>
+{% block content %}
+
+<nav class="navbar navbar-inverse" style="background-color: #deedff; border: 0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home/" style= "7u; color: #003d87">VACCESS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/" class = "color_me" id="spaceGroFont" style="color: #003d87;">Home</a></li>
+      <li><a href= "/statistics/" id="spaceGroFont" style="color: #003d87">Statistics</a></li>
+     <li><a href="/asmts/" style="color: #003d87">Assess</a></li>
+    <li><a href="/about/" style="color: #003d87">About Us</a></li>
+    
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/dash/" style="color: #003d87"><span class="glyphicon glyphicon-user" style="color: #003d87"></span>Account Dashboard</a></li>
+      <li><a href="/login/" style="color: #003d87"><span class="glyphicon glyphicon-log-in" style="color: #003d87"></span> Sign Up/Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="row" >
+  <h1 style="font-size: 1000%; margin-top: 100px; text-align: center; padding-right: 10px;">VACCESS</h1>
+</div>
+
+
+
+<style> 
+
+ <body>
+
+ <div class="bg"></div>
+
+  <p class="py-5 text-center"></p>
+
+  </body>
+
+  body{
+    background-color: #deedff;
+  }
+
+   svg {
+      font: bold 50px 'Libre Franklin', sans-serif;
+      width: 100%;
+      height: 300px;
+    }
+
+    text{
+      fill: none;
+      stroke: white;
+      stroke-width:0.5px;
+      stroke-linejoin: round;
+    }
+
+    @keyframes pulsate {
+    50%{ stroke-width:2px; }
+    }
+    </style>
+<svg viewBox="0 0 100 100" style="font-size: 45.5px; margin-top:-450px;text-align:left; padding-right:19%;">
+  <text y="82.5" x="0">VACCESS</text>
+</svg>
+
+<div class="col-6 col-md-4" style="background-image: url(.../assets/subnavp.png">
+</div>
+
+<div style="margin-left: 8%; margin-right: 8%; margin-top: 50px; margin-bottom: 50px; text-align: center; font-size: 30px; font-family: 'Space Grotesk', sans-serif;">
+  <br> 
+  <h3 style="font-size: 50px; font-family: 'Space Grotesk', sans-serif;">Vaccines For All</h3>
+  <br>
+  <p style="font-size: .7em; font-family: 'Space Grotesk', sans-serif;" >Get real-time data about vaccine locations and symptoms of patients near you.</p>
+  <br>
+</div>
+
+<div class="row">
+  <div class="col">
+  
+  </div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div> 
+
+<img src="/static/img/phoneFigma.png" id="imgDisplay" alt="Phone Displays" style="padding-left:5%;"></img>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+{% endblock %}
+</html>

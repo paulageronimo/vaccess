@@ -1,0 +1,151 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}About{% endblock %} 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/static/fonts.css">
+</head>
+
+{% block styles %} 
+{{super()}}
+<style>
+	.nav navbar-inverse.container-fluid.navbar-header.navbar-nav li a {
+    color: blue;
+
+}
+body {
+  background-image: url(../assets/subnavp.png) !important;
+  background-color: #deedff;
+  
+}
+
+#spaceGroFont{
+  font-family: 'Space Grotesk', sans-serif !important;
+} 
+</style>
+
+{%endblock%}
+
+{% block content %}
+<nav class="navbar navbar-inverse" style="background-color: #deedff; border: 0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home/" style= "7u; color: #003d87">VACCESS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/" class = "color_me" id="spaceGroFont" style="color: #003d87;">Home</a></li>
+      <li><a href= "/statistics/" id="spaceGroFont" style="color: #003d87">Statistics</a></li>
+     <li><a href="/user/asmts/" style="color: #003d87">Assess</a></li>
+    <li><a href="/about/" style="color: #003d87">About Us</a></li>
+    
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/dash/" style="color: #003d87"><span class="glyphicon glyphicon-user" style="color: #003d87"></span>Account Dashboard</a></li>
+      <li><a href="/login/" style="color: #003d87"><span class="glyphicon glyphicon-log-in" style="color: #003d87"></span> Sign Up/Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div>
+  <br> 
+  <h1 style="font-size: 70px; text-align: center;"> 💉 Vaccines For All<h1> 
+  <h2 style="font-size: 50px; text-align: center;margin-left: 2%;">Safely. Accessibly.</h2>
+  <br>
+</div>
+
+<div style="margin-left: 8%; margin-right: 8%; font-size: 30px"> 
+  <br>
+  <h3 style="font-size: 50px">OUR MISSION</h3>
+
+  <style>
+       svg {
+      font: 50px 'Libre Franklin', sans-serif;
+      width: 100%;
+      height: 120px;
+    }
+        text{
+      fill: none;
+      stroke: white;
+      stroke-width:0.5px;
+      stroke-linejoin: round;
+    }
+  </style>
+  <svg viewBox="0 0 100 100" style="font-size: 41px; margin-top:-450px;text-align:left; padding-right:19%;">
+  <text y="56" x="-495">OUR MISSION</text>
+</svg>
+
+  <br>
+  <ul>
+  <li>Allowing users to make educated and safe decisions regarding their health</li>
+  <li>Providing information on community experience with various vaccines</li>
+  <li>Enforcing accessibility and convenience for users seeking vaccination</li>
+  </ul> 
+</div>
+
+<div style="margin-left: 8%; margin-right: 8%; margin-top: 50px; text-align: right; font-size: 30px;">
+  <br>
+  <h3 style="font-size: 50px">IMPORTANCE AND IMPACT</h3> 
+
+    <style>
+       svg {
+      font: 50px 'Libre Franklin', sans-serif;
+      width: 100%;
+      height: 120px;
+    }
+        text{
+      fill: none;
+      stroke: white;
+      stroke-width:0.5px;
+      stroke-linejoin: round;
+    }
+  </style>
+  <svg viewBox="0 0 100 100" style="font-size: 42px; margin-top:-450px;text-align:left;">
+  <text y="58" x="181">IMPORTANCE AND IMPACT</text>
+</svg>
+
+  <br>
+  <p>Misinformation regarding vaccines and their side effects is rampant on social media outlets, making it crucial for accurate and community-specific information to be accessible. Ensuring accessibility to vaccination sites and relevant facts in turn ensures communities are able to easily engage in healthy practices, notably maintaining herd immunity.</p>
+</div>
+
+<div style="margin-left: 8%; margin-right: 8%; margin-top: 50px; margin-bottom: 50px; text-align: left; font-size: 30px;">
+  <br>
+  <h3 style="font-size: 50px;">HOW DOES IT WORK?</h3> 
+
+    <style>
+       svg {
+      font: 50px 'Libre Franklin', sans-serif;
+      width: 100%;
+      height: 120px;
+    }
+        text{
+      fill: none;
+      stroke: white;
+      stroke-width:0.5px;
+      stroke-linejoin: round;
+    }
+  </style>
+  <svg viewBox="0 0 100 100" style="font-size: 41px; margin-top:-450px;text-align:left; padding-right:19%;">
+  <text y="56" x="-495">HOW DOES IT WORK?</text>
+</svg>
+
+  <br>
+  <p>This web app is accessible from a phone app to a website and collaborates with vaccine companies, state government, and FDA. By using web scraping to extract data on specific illnesses and side effects; doctors and pharmaceutical companies are able to see the data in real time. Also, for tracking vaccines, we use Global Positioning Satellites to track vaccines at local pharmacies or anywhere where there is access to medicine. This app is able to connect patients to their doctor by telemedicine. So, this shows transparency, accuracy, and accessibility to all patients around the globe.</p>
+  <br>
+</div>
+
+
+
+<style>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+{% endblock %}
