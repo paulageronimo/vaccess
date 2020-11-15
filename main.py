@@ -64,31 +64,32 @@ def data():
 # go to self assessment/profile ? 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
-    form = LoginForm()
+  form = LoginForm()
+  return render_template('login.html', form=form)
 
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user:
-            if check_password_hash(user.password, form.password.data):
-                login_user(user, remember=form.remember.data)
-                return redirect({{ url_for('dash') }})
+  if form.validate_on_submit():
+    user = User.query.filter_by(username=form.username.data).first()
+  #     if user:
+  #         if check_password_hash(user.password, form.password.data):
+  #             login_user(user, remember=form.remember.data)
+    return redirect('/dash/')
+  return render_template('login.html', form=form)
 
-        return '<h1>Invalid username or password</h1>'
+        # return '<h1>Invalid username or password</h1>'
         #return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
 
-    return render_template('login.html', form=form)
+   # return render_template('login.html', form=form)
 
 @app.route('/signup/', methods=['GET', 'POST'])
 def signup():
     form = RegisterForm()
 
     if form.validate_on_submit():
-        hashed_password = generate_password_hash(form.password.data, method='sha256')
-        new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
-        db.session.add(new_user)
-        db.session.commit()
-
-        return '<h1>New user has been created!</h1>'
+    #     hashed_password = generate_password_hash(form.password.data, method='sha256')
+    #     new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+    #     db.session.add(new_user)
+    #     db.session.commit()
+      return '<h1>New user has been created!</h1>'
         #return '<h1>' + form.username.data + ' ' + form.email.data + ' ' + form.password.data + '</h1>'
 
     return render_template('signup.html', form=form)
@@ -103,17 +104,12 @@ def start():
 @app.route('/asmts/')
 def asmts():
   return render_template("asmts.html")
-  
-@app.route('/asmts-covid/')
-def covid():
-  return render_template("covid.html")
-  
+
 # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 @app.route('/dash/')
-@login_required
 def dashboard():
-    return render_template('dash.html', name=current_user.username)
+    return render_template('dash.html')
 
 @app.route('/logout/')
 @login_required

@@ -15,6 +15,7 @@ wtforms = "^2.3.3"
 flask-login = "^0.5.0"
 flask-sqlalchemy = "^2.4.4"
 werkzeug = "^1.0.1"
+replit = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 
